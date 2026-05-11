@@ -1,11 +1,9 @@
-from src.runner.conftest import *  # noqa: F403
-
+"""
+Conftest for step definitions - Registers all step definitions for pytest-bdd
+"""
 import pytest
 from src.corecomponents.xls_reader import XlsReader
 from src.corecomponents.constants import TEST_DATA_XLSX
-
-# Import step definitions to register them
-from src.tests.step_defs import test_saucedemo_steps  # noqa: F401
 
 
 @pytest.fixture(scope="function")
@@ -16,4 +14,3 @@ def test_data(request):
     if scenario_name:
         return reader.read_rows(TEST_DATA_XLSX, "login")
     return None
-
