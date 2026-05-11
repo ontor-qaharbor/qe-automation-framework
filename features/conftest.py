@@ -11,6 +11,6 @@ from src.tests import step_defs as step_defs_pkg
 pytest_plugins = ["src.tests.conftest"]
 
 for module in iter_modules(step_defs_pkg.__path__, f"{step_defs_pkg.__name__}."):
-    if module.name.endswith(".conftest"):
+    if module.name.endswith("conftest"):
         continue
     import_module(module.name)
