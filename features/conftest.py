@@ -1,7 +1,6 @@
 """
-Feature-level conftest to ensure pytest-bdd feature runs load shared fixtures
-and step definitions.
+Feature-level conftest to enable direct .feature execution by loading
+the shared pytest fixtures and step definitions from the test layer.
 """
 
-from src.tests.conftest import *  # noqa: F403,F401
-
+pytest_plugins = ["src.tests.conftest"]
