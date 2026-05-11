@@ -1,0 +1,22 @@
+# Core Test Framework
+pytest==7.4.3
+pytest-bdd==7.3.0
+pytest-playwright==0.4.2
+playwright==1.40.0
+
+# Test Utilities
+pytest-timeout==2.2.0
+pytest-xdist==3.5.0
+pytest-cov==4.1.0
+
+# Reporting & Output
+pytest-html==4.1.1
+allure-pytest==2.13.2
+
+# Data Handling
+openpyxl==3.1.5
+pyyaml==6.0
+
+# Logging & Utilities
+python-dotenv==1.0.0
+
