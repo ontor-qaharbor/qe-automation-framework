@@ -1,4 +1,3 @@
-DEBUG    parse:parse.py:444 format 'I login with test data "{TestCase}"' -> 'I login with test data "(?P<TestCase>.+?)"'
 DEBUG    faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.address`.
 DEBUG    faker.factory:factory.py:97 Provider `faker.providers.address` has been localized to `en_US`.
 DEBUG    faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.automotive`.
@@ -44,5 +43,54 @@ DEBUG    faker.factory:factory.py:108 Provider `faker.providers.sbn` does not fe
 DEBUG    faker.factory:factory.py:78 Looking for locale `en_US` in provider `faker.providers.ssn`.
 DEBUG    faker.factory:factory.py:97 Provider `faker.providers.ssn` has been localized to `en_US`.
 DEBUG    faker.factory:factory.py:108 Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not used for this provider.
-DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_given_I am on the SauceDemo login page': [<FixtureDef argname='pytestbdd_stepdef_given_I am on the SauceDemo login page' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
-DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_when_I login with test data "invalid_login_wrong_password"': [<FixtureDef argname='pytestbdd_stepdef_when_I login with test data "{TestCase}"' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_given_I navigate to saucedemo login page': [<FixtureDef argname='pytestbdd_stepdef_given_I navigate to saucedemo login page' scope='function' baseid=''>, <FixtureDef argname='pytestbdd_stepdef_given_I navigate to saucedemo login page' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+DEBUG    asyncio:proactor_events.py:634 Using proactor: IocpProactor
+DEBUG    src.corecomponents.base_page:base_page.py:97 Generic initialised with page: about:blank
+INFO     src.corecomponents.base_page:base_page.py:1108 Navigate to login page
+INFO     src.corecomponents.base_page:base_page.py:1096 TEST: Navigate to login
+INFO     src.corecomponents.base_page:base_page.py:137 navigate → https://www.saucedemo.com/
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ navigate(https://www.saucedemo.com/)
+INFO     src.corecomponents.base_page:base_page.py:676 wait_for_visible(#user-name, timeout=30000)
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ wait_for_visible(#user-name)
+INFO     src.corecomponents.base_page:base_page.py:1088 PASS: Navigation - Successfully navigated to login page
+DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_when_I login with test data "valid_login_standard_user"': [<FixtureDef argname='pytestbdd_stepdef_when_I login with test data "{TestCase}"' scope='function' baseid=''>, <FixtureDef argname='pytestbdd_stepdef_when_I login with test data "{TestCase}"' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+INFO     src.corecomponents.base_page:base_page.py:1108 Login with: valid_login_standard_user
+INFO     src.corecomponents.base_page:base_page.py:1096 TEST: Login with test data
+INFO     src.corecomponents.base_page:base_page.py:238 type_text(#user-name, 'standard_user')
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ type_text(#user-name)
+INFO     src.corecomponents.base_page:base_page.py:238 type_text(#password, 'secret_sauce')
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ type_text(#password)
+INFO     src.corecomponents.base_page:base_page.py:168 click(#login-button)
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ click(#login-button)
+INFO     src.corecomponents.base_page:base_page.py:1088 PASS: Login - Successfully logged in with valid credentials
+DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_then_I should be on the inventory page': [<FixtureDef argname='pytestbdd_stepdef_then_I should be on the inventory page' scope='function' baseid=''>, <FixtureDef argname='pytestbdd_stepdef_then_I should be on the inventory page' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+INFO     src.corecomponents.base_page:base_page.py:1108 Verify inventory page
+INFO     src.corecomponents.base_page:base_page.py:1096 TEST: Verify inventory page
+INFO     src.corecomponents.base_page:base_page.py:676 wait_for_visible([data-test='inventory-container'], timeout=30000)
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ wait_for_visible([data-test='inventory-container'])
+INFO     src.corecomponents.base_page:base_page.py:1088 PASS: Inventory Page - Inventory page is displayed correctly
+DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_then_I add item to cart': [<FixtureDef argname='pytestbdd_stepdef_then_I add item to cart' scope='function' baseid=''>, <FixtureDef argname='pytestbdd_stepdef_then_I add item to cart' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+INFO     src.corecomponents.base_page:base_page.py:1108 Add item to cart
+INFO     src.corecomponents.base_page:base_page.py:1096 TEST: Add item to cart
+INFO     src.corecomponents.base_page:base_page.py:168 click(#add-to-cart-sauce-labs-backpack)
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ click(#add-to-cart-sauce-labs-backpack)
+INFO     src.corecomponents.base_page:base_page.py:1088 PASS: Add to Cart - Item added to cart successfully
+DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_then_I verify cart count is correct': [<FixtureDef argname='pytestbdd_stepdef_then_I verify cart count is correct' scope='function' baseid=''>, <FixtureDef argname='pytestbdd_stepdef_then_I verify cart count is correct' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+INFO     src.corecomponents.base_page:base_page.py:1108 Verify cart count
+INFO     src.corecomponents.base_page:base_page.py:1096 TEST: Verify cart count
+DEBUG    src.corecomponents.base_page:base_page.py:119 ✔ get_text(.shopping_cart_badge)
+INFO     src.corecomponents.base_page:base_page.py:626 get_text(.shopping_cart_badge) → '1'
+INFO     src.corecomponents.base_page:base_page.py:1088 PASS: Cart Count - Cart count is correct: 1
+DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_when_I login with test data "invalid_login_wrong_password"': [<FixtureDef argname='pytestbdd_stepdef_when_I login with test data "{TestCase}"' scope='function' baseid=''>, <FixtureDef argname='pytestbdd_stepdef_when_I login with test data "{TestCase}"' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+DEBUG    src.corecomponents.base_page:base_page.py:97 Generic initialised with page: about:blank
+INFO     src.corecomponents.base_page:base_page.py:1108 Login with: invalid_login_wrong_password
+INFO     src.corecomponents.base_page:base_page.py:1096 TEST: Login with test data
+INFO     src.corecomponents.base_page:base_page.py:238 type_text(#user-name, 'locked_out_user')
+ERROR    src.corecomponents.base_page:base_page.py:122 ✘ TIMEOUT  — type_text(#user-name) | Timeout 30000ms exceeded.
+ERROR    src.corecomponents.base_page:base_page.py:1092 FAIL: Login - Login failed. Error: Timeout 30000ms exceeded.
+DEBUG    pytest_bdd.scenario:scenario.py:145 Adding providers for fixture 'pytestbdd_stepimpl_then_I should see a login error message': [<FixtureDef argname='pytestbdd_stepdef_then_I should see a login error message' scope='function' baseid=''>, <FixtureDef argname='pytestbdd_stepdef_then_I should see a login error message' scope='function' baseid='src/tests/test_bdd_login_to_cart.py'>]
+INFO     src.corecomponents.base_page:base_page.py:1108 Verify login error message
+INFO     src.corecomponents.base_page:base_page.py:1096 TEST: Verify login error
+INFO     src.corecomponents.base_page:base_page.py:676 wait_for_visible([data-test='error'], timeout=30000)
+ERROR    src.corecomponents.base_page:base_page.py:122 ✘ TIMEOUT  — wait_for_visible([data-test='error']) | Timeout 30000ms exceeded.
+ERROR    src.corecomponents.base_page:base_page.py:1092 FAIL: Login Error - Verification failed. Error: Timeout 30000ms exceeded.

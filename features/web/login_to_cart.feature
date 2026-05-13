@@ -1,10 +1,12 @@
-Feature: SauceDemo login and add to cart
+Feature: SauceDemo Login and Cart
 
-   @smoke
-   Scenario Outline: Login with valid credentials
-     Given I am on the SauceDemo login page
-     When I login with test data "<TestCase>"
-     Then I should be on the inventory page
+  @smoke
+  Scenario Outline: Login with valid credentials
+    Given I navigate to saucedemo login page
+    When I login with test data "<TestCase>"
+    Then I should be on the inventory page
+    And I add item to cart
+    Then I verify cart count is correct
 
     Examples:
       | TestCase                  |

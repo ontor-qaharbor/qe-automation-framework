@@ -14,7 +14,7 @@ class SauceDemoLocators:
     FORGOT_PASSWORD_LINK = "#forgot_password_link"
 
     # Inventory/Dashboard Page Locators
-    INVENTORY_CONTAINER = "#inventory_container"
+    INVENTORY_CONTAINER = "[data-test='inventory-container']"
     APP_LOGO = ".app_logo"
     BURGER_MENU_BUTTON = "#react-burger-menu-btn"
     LOGOUT_LINK = "#logout_sidebar_link"

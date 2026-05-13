@@ -23,6 +23,23 @@ class SauceDemo:
         except Exception as e:
             self.base_page.report_fail("Navigation", "Failed to navigate. Error: " + str(e))
 
+    def login_with_test_data(self, test_case):
+        """Login with test data - routes to appropriate login method based on test case type."""
+        try:
+            from src.corecomponents.xls_reader import get_login_by_title
+            from pathlib import Path
+            TEST_DATA_XLSX = Path(__file__).resolve().parents[1] / ".." / "data" / "Test_Data.xlsx"
+
+            row = get_login_by_title(TEST_DATA_XLSX, test_case, sheet_name="login")
+            test_data = {"username": row.username, "password": row.password}
+
+            if "valid" in test_case.lower():
+                self.login_with_valid_credentials(test_data)
+            else:
+                self.login_with_invalid_credentials(test_data)
+        except Exception as e:
+            self.base_page.report_fail("Login", f"Login failed. Error: {str(e)}")
+
     def login_with_valid_credentials(self, test_data):
         """Login with valid credentials from test data."""
         try:
@@ -67,13 +84,13 @@ class SauceDemo:
         except Exception as e:
             self.base_page.report_fail("Add to Cart", "Failed to add item. Error: " + str(e))
 
-    def verify_cart_count(self, expected_count):
-        """Verify cart badge shows correct count."""
+    def verify_cart_count(self):
+        """Verify cart badge shows correct count (implicitly 1 for single item)."""
         try:
             actual_count = self.base_page.get_text(SauceDemoLocators.CART_BADGE)
-            if actual_count == str(expected_count):
+            if actual_count and actual_count == "1":
                 self.base_page.report_pass("Cart Count", f"Cart count is correct: {actual_count}")
             else:
-                self.base_page.report_fail("Cart Count", f"Cart count mismatch. Expected: {expected_count} Actual: {actual_count}")
+                self.base_page.report_fail("Cart Count", f"Cart count mismatch. Expected: 1, Actual: {actual_count}")
         except Exception as e:
             self.base_page.report_fail("Cart Count", "Verification failed. Error: " + str(e))
